@@ -1,0 +1,38 @@
+# 排除模型文件
+*.safetensors
+*.onnx
+*.bin
+*.pt
+*.pth
+*.checkpoint
+*.ckpt
+
+# 排除数据集相关文件
+dataset/dataset/
+data/*/images/
+pictures/
+
+# 排除大型二进制文件
+*.model
+*.cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 特定排除
+phi4/model-*.safetensors
+phi4/.cache/
+*.zip
+*.tar
+*.gz
+
+# 系统文件
+.DS_Store
+.env
+.venv
+env/
+venv/
+ENV/
+
+# 日志文件
+*.log
