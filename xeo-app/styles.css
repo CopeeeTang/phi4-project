@@ -1,0 +1,345 @@
+/* 全局样式 */
+:root {
+  --primary-color: #4a6da7;
+  --secondary-color: #5d93d1;
+  --accent-color: #ff6b6b;
+  --background-color: #f5f7fa;
+  --text-color: #333;
+  --light-text: #777;
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* 容器样式 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 标题栏样式 */
+header {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 导航菜单样式 */
+nav {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-menu li {
+  padding: 15px 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-color);
+}
+
+.nav-menu .active {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+/* 主要内容区样式 */
+main {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+}
+
+/* 卡片通用样式 */
+.card {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+/* 设备控制部分 */
+.devices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.device-card {
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.device-card:hover {
+  transform: translateY(-5px);
+}
+
+.device-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.device-name {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.device-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-on {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.status-off {
+  background-color: var(--light-text);
+  color: white;
+}
+
+.device-controls {
+  margin-top: 10px;
+}
+
+.toggle-btn {
+  width: 60px;
+  height: 30px;
+  background-color: #ddd;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn.active {
+  background-color: var(--success-color);
+}
+
+.toggle-handle {
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle-btn.active .toggle-handle {
+  transform: translateX(30px);
+}
+
+/* 场景模式部分 */
+.scenes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.scene-card {
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.scene-card:hover {
+  transform: translateY(-5px);
+}
+
+.scene-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+/* 侧边栏样式 */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 天气部分 */
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-icon {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.temperature {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.weather-condition {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.weather-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: var(--light-text);
+}
+
+.detail-value {
+  font-weight: 500;
+}
+
+/* 提醒事项部分 */
+.reminder-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  background-color: rgba(74, 109, 167, 0.1);
+}
+
+.reminder-icon {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.reminder-text {
+  flex-grow: 1;
+}
+
+.reminder-time {
+  font-size: 0.8rem;
+  color: var(--light-text);
+}
+
+/* 能源消耗部分 */
+.energy-chart {
+  width: 100%;
+  height: 250px;
+}
+
+/* 页脚样式 */
+footer {
+  background-color: #fff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  margin-top: 30px;
+  text-align: center;
+  color: var(--light-text);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  
+  .devices-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    flex-direction: column;
+  }
+  
+  .devices-grid, .scenes-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
